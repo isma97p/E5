@@ -34,6 +34,7 @@ jobs:
       run: | 
         cp main.py temp.py
         echo -e "client_id=\"$CONFIG_ID\"" > configid.txt
+        cat configid.txt
         echo -e "client_secret=\"$CONFIG_KEY\"" > configkey.txt
         echo -e "refresh_token=\"$REFRESH_TOKEN\"" > refreshtoken.txt
         sed -i '10 r configid.txt' temp.py
