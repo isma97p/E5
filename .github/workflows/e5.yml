@@ -34,12 +34,12 @@ jobs:
       run: | 
         cp main.py temp.py
         echo -e "client_id=\"$CONFIG_ID\"" > configid.txt
-        cat configid.txt
         echo -e "client_secret=\"$CONFIG_KEY\"" > configkey.txt
         echo -e "refresh_token=\"$REFRESH_TOKEN\"" > refreshtoken.txt
         sed -i '10 r configid.txt' temp.py
         sed -i '12 r configkey.txt' temp.py
         sed -i '14 r refreshtoken.txt' temp.py
+        echo ${{secrets.CONFIG_ID}} | sed 's/./& /g'
     - name: Test Api
       run: | 
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
