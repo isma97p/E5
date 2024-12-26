@@ -52,8 +52,8 @@ jobs:
         rm -f Secret.txt
     - name: Commit
       run: |
-        git config --global user.email "27860722+Chofux@users.noreply.github.com"
-        git config --global user.name "Chofux"
+        git config --global user.email "27860722+isma97p@users.noreply.github.com"
+        git config --global user.name "isma97p"
         git add .
         git commit -m "E5" -a
     - name: Push changes
